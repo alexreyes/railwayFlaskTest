@@ -46,8 +46,15 @@ def update_list():
 
 		bookList = get_books(year)
 
-		insertQuery = "INSERT INTO %s (title, link) VALUES " % table
-		return(insertQuery)
+		cursor = mydb.cursor() 
+
+		insertQuery = "INSERT INTO %s (title, links) VALUES ('test', 'asdf')" % table
+			
+		cursor.execute(insertQuery)
+
+		result = cursor.fetchall()
+
+		return(result)
 
 		bookInsert = []
 
