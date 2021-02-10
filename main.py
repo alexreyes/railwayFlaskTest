@@ -48,31 +48,15 @@ def update_list():
 
 		cursor = mydb.cursor() 
 			
-		insertPartOne = "INSERT INTO fruit (name, variety) VALUES (%s, %s)"
-		cursor.execute("INSERT INTO fruit (name, variety) VALUES (%s, %s)", (new_fruit, new_fruit_type));
+		insertPartOne = "INSERT INTO books2019 (title, link) VALUES ('test', 'yeet')"
+		cursor.execute(insertPartOne);
 
 		result = cursor.fetchall()
 
-		return(result)
+		return(jsonify(result))
 
 		bookInsert = []
 
-		# for book in bookList: 
-		# 	title = book[0]
-		# 	link = book[1]
-
-		# 	bookInsert.append((title, link))
-		# 	print(title)
-		# 	print(link)
-		# 	cursor = mydb.cursor()     # get the cursor
-
-
-		# selectQuery = "SELECT * FROM %s" % (table)
-		# cursor.execute(selectQuery)
-
-		# result = cursor.fetchall()
-
-		# return jsonify(result)
 	else: 
 		return 'SPECIFY YEAR'
 
