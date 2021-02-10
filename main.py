@@ -47,10 +47,9 @@ def update_list():
 		bookList = get_books(year)
 
 		cursor = mydb.cursor() 
-
-		insertQuery = "INSERT INTO %s (title, links) VALUES ('test', 'asdf')" % table
 			
-		cursor.execute(insertQuery)
+		insertPartOne = "INSERT INTO fruit (name, variety) VALUES (%s, %s)"
+		cursor.execute("INSERT INTO fruit (name, variety) VALUES (%s, %s)", (new_fruit, new_fruit_type));
 
 		result = cursor.fetchall()
 
